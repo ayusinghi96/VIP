@@ -29,12 +29,12 @@ extension MovieCell {
     struct ViewProps {
 
         var title: String
-        var year: String
+        var year: Int
     }
 
     func render(props: ViewProps) {
 
         self.titleLabel.text = props.title.capitalized
-        self.yearLabel.text = props.year
+        self.yearLabel.text = String(props.year)
     }
 }

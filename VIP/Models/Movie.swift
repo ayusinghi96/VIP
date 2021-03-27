@@ -12,9 +12,11 @@ import Foundation
 /// A movie
 ///
 struct Movie: Codable {
-    
+
     /// Name of the movie
     var title: String
     /// Launch year.
-    var year: String
+    var year: Int
+    /// The rating earned by the movie.
+    var imdbRating: Float
 }
