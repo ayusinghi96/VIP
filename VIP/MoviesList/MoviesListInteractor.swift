@@ -25,12 +25,28 @@ extension MoviesListInteractor {
     func getMovies()
     {
         FileReader.getMovies { result in
-            guard case let .success(movies) = result
+            guard case var .success(movies) = result
             else {
                 self.presenter.updateViewForNoData()
                 return
             }
+            movies = self.processMovies(movies: movies)
             self.presenter.updateView(withMovies: movies)
+        }
+    }
+}
+
+
+// MARK: - Business logic
+extension MoviesListInteractor {
+
+    ///
+    /// Process movie data according to the requirment.
+    ///
+    func processMovies(movies: [Movie]) -> [Movie] {
+
+        return movies.filter { movie in
+            movie.imdbRating > 8.0
         }
     }
 }
