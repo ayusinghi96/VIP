@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  VIP
 //
-//  Created by 55 TECH on 27/03/21.
+//  Created by Ayush Singhi on 27/03/21.
 //
 
 import UIKit
